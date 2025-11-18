@@ -1,0 +1,142 @@
+name: High_Level
+
+defaults:
+  # see https://hydra.cc/docs/advanced/overriding_packages/
+  # - /base/env_base@_here_
+  - /base/sim_base@_here_
+  # - /base/randomization_base@_here_
+
+ball_mass: 0.005 # kg
+ball_radius: 0.1 # m
+
+env:
+  num_envs: 4096
+  max_episode_length: 1500 # max_episode_length * sim_dt * substeps = 1500 * 0.01 * 1 = 15s
+  min_episode_length: 50
+  env_spacing: 15
+
+drone_model: Iris
+force_sensor: false
+
+stats:
+  complete_reward_stats: true
+
+court:
+  L: 12.0
+  W: 6.0
+  H_NET: 2.43
+  W_NET: 0.76
+
+use_trained_state: false
+
+random_turn: false
+
+Opp_FirstPass_goto_pos_before_hit: [4.5, -1.5, 1.0] # left_point
+Opp_FirstPass_hover_pos_after_hit: [4.5, 0., 1.5]
+Opp_FirstPass_goto_receive_pos: [4.0, 0., 1.0]
+
+Opp_SecPass_goto_pos_before_hit: [2.0, -2.0, 1.8]
+Opp_SecPass_hover_pos_after_hit: [2.0, -2.0, 1.0]
+
+Opp_Att_goto_pos_before_hit: [2.0, 1.5, 2.5]
+Opp_Att_hover_pos_after_hit: [2.0, 0., 2.5]
+
+FirstPass_goto_pos_before_hit: [4.5, -1.5, 1.0] # left_point
+FirstPass_hover_pos_after_hit: [4.5, 0., 1.5]
+FirstPass_goto_receive_pos: [4.0, 0., 1.0]
+
+SecPass_goto_pos_before_hit: [2.0, -2.0, 1.8]
+SecPass_hover_pos_after_hit: [2.0, -2.0, 1.0]
+
+Att_goto_pos_before_hit: [2.0, 1.5, 2.5]
+Att_hover_pos_after_hit: [2.0, 0., 2.5]
+
+initial:
+  
+  # Always be initialized in the near side of the court. We will transfer to the far side in the task.
+
+  serve_pos_dist:
+    low: [6.0, 0.0, 1.8]
+    high: [6.0, 0.0, 2.0]
+  Opp_FirstPass_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_FirstPass_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_FirstPass_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+
+  Opp_SecPass_pos_dist:
+    low: [1.9, -1.9, 1.7]
+    high: [2.1, -2.1, 1.9]
+  Opp_SecPass_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_SecPass_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_SecPass_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  
+  Opp_Att_pos_dist:
+    low: [1.8, 1.3, 2.3]
+    high: [2.2, 1.7, 2.7]
+  Opp_Att_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_Att_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Opp_Att_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  
+  receive_pos_dist:
+    low: [4.0, 0., 1.0]
+    high: [4.0, 0., 1.0]
+  FirstPass_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  FirstPass_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  FirstPass_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+
+  SecPass_pos_dist:
+    low: [1.9, -1.9, 1.7]
+    high: [2.1, -2.1, 1.9]
+  SecPass_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  SecPass_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  SecPass_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  
+  Att_pos_dist:
+    low: [1.8, 1.3, 2.3]
+    high: [2.2, 1.7, 2.7]
+  Att_rpy_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Att_lin_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+  Att_ang_vel_dist:
+    low: [-0.1, -0.1, -0.1]
+    high: [0.1, 0.1, 0.1]
+
+  ball_pos_dist:
+    low: [6.0, -0.1, 4.8]
+    high: [6.0, 0.1, 5.0]
+  
+  ball_vel_dist:
+    low: [0., 0., 0.]
+    high: [0., 0., 0.]

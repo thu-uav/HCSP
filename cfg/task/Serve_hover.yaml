@@ -1,0 +1,62 @@
+name: Serve_hover
+
+defaults:
+  # see https://hydra.cc/docs/advanced/overriding_packages/
+  - /base/env_base@_here_
+  - /base/sim_base@_here_
+  # - /base/randomization_base@_here_
+
+ball_mass: 0.005 # kg
+ball_radius: 0.1 # m
+
+env:
+  num_envs: 4096
+  max_episode_length: 500 # 500*0.02=10s
+
+drone_model: Iris
+force_sensor: false
+
+done_ball_hit_ground: false
+
+stats:
+  complete_reward_stats: true
+
+court:
+  L: 12.0
+  W: 6.0
+  H_NET: 2.43
+  W_NET: 0.76
+
+ball_anchor_target_0: [-4.5, -2.0, 0.5]
+ball_anchor_target_1: [-4.5,  0.0, 0.5]
+ball_anchor_target_2: [-4.5,  2.0, 0.5]
+
+Server_hover_pos_after_hit: [4.5, 0.0, 2.0]
+
+save_ball_state: false
+
+initial:
+
+  drone_pos_dist:
+    low: [6.0, 0.0, 1.8]
+    high: [6.0, 0.0, 2.0]
+  
+  drone_rpy_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  drone_lin_vel_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  drone_ang_vel_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+
+  ball_pos_dist: 
+    low: [6.0, -0.1, 4.8]
+    high: [6.0, 0.1, 5.0]
+  
+  ball_vel_dist:
+    low: [0., 0., 0.]
+    high: [0., 0., 0.]

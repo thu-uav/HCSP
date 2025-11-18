@@ -1,0 +1,40 @@
+name: Goto
+
+defaults:
+  # see https://hydra.cc/docs/advanced/overriding_packages/
+  - /base/env_base@_here_
+  - /base/sim_base@_here_
+
+env:
+  num_envs: 4096
+
+drone_model: Iris
+force_sensor: false
+time_encoding: false
+
+reward_effort_weight: 0.1
+reward_action_smoothness_weight: 0.0
+reward_motion_smoothness_weight: 0.0
+reward_distance_scale: 1.2
+
+action_transform: null
+
+save_drone_state: false
+
+initial:
+
+  drone_pos_dist:
+    low: [-2.5, -2.5, 1.]
+    high: [2.5, 2.5, 2.5]
+  
+  drone_rpy_dist: # * pi
+    low: [-0.33, -0.33, -0.33]
+    high: [0.33, 0.33, 0.33]
+  
+  drone_lin_vel_dist:
+    low: 
+    high:
+  
+  drone_ang_vel_dist:
+    low: 
+    high:

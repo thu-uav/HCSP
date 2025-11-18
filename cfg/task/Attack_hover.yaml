@@ -1,0 +1,79 @@
+name: Attack_hover
+
+defaults:
+  # see https://hydra.cc/docs/advanced/overriding_packages/
+  - /base/env_base@_here_
+  - /base/sim_base@_here_
+  # - /base/randomization_base@_here_
+
+ball_mass: 0.005 # kg
+ball_radius: 0.1 # m
+
+env:
+  num_envs: 4096
+  max_episode_length: 500 # 500*0.02=10s
+
+drone_model: Iris
+force_sensor: false
+
+stats:
+  complete_reward_stats: true
+
+court:
+  L: 12.0
+  W: 6.0
+  H_NET: 2.43
+  W_NET: 0.76
+
+ball_anchor_0: [-5.0, -2.0, 0.2]
+ball_anchor_1: [-5.0, 2.0, 0.2]
+
+done_ball_hit_ground: false
+done_Att_pass_the_net: false
+
+SecPass_hover_pos_after_hit: [1.5, -2., 1.0]
+
+Att_hover_pos_after_hit: [1.5, 0., 2.5]
+Att_goto_pos_before_hit: [2.0, 1.5, 2.5]
+
+initial:
+
+  SecPass_pos_dist:
+    low: [2., -2., 1.6]
+    high: [3., -1., 1.8]
+  
+  SecPass_rpy_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  SecPass_lin_vel_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  SecPass_ang_vel_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  Att_pos_dist:
+    low: [1.0, 0., 2.2]
+    high: [2.0, 1., 2.8]
+  
+  Att_rpy_dist:
+    low: [-0.5, -0.5, -0.5]
+    high: [0.5, 0.5, 0.5]
+  
+  Att_lin_vel_dist:
+    low: [-0., -0., -0.]
+    high: [0., 0., 0.]
+  
+  Att_ang_vel_dist:
+    low: [-0., -0., -0.]
+    high: [0., 0., 0.]
+
+  ball_pos_dist:
+    low: [4.5, -2.3, 1.2]
+    high: [5.5, 2.3, 1.6]
+  
+  ball_vel_dist:
+    low: [-2.3, -0.5, 7.0]
+    high: [-2.8, 0., 7.5]

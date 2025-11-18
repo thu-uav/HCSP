@@ -1,0 +1,12 @@
+from .mappo_Attack import MAPPOPolicy_Attack
+from .mappo_Attack_hover import MAPPOPolicy_Attack_hover
+from .mappo_Pass import MAPPOPolicy_Pass
+from .mappo_Pass_hover import MAPPOPolicy_Pass_hover
+from .mappo_Receive import MAPPOPolicy_Receive
+from .mappo_Receive_hover import MAPPOPolicy_Receive_hover
+from .mappo_Serve_hover import MAPPOPolicy_Serve_hover
+from .mappo_Set_hover import MAPPOPolicy_Set_hover
+
+from .psro_high_level import PSROPolicy_high_level
+from .psro_coselfplay_phase_one import PSROPolicy_coselfplay_phase_one
+from .psro_coselfplay_phase_two import PSROPolicy_coselfplay_phase_two

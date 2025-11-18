@@ -1,0 +1,2 @@
+from .coselfplay_phase_one import Coselfplay_Phase_one
+from .coselfplay_phase_two import Coselfplay_Phase_two
