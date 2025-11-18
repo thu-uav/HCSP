@@ -11,9 +11,9 @@ This repository is the official implementation of the paper "Mastering Multi-Dro
 </p>
 
 Ruize Zhang, Sirui Xiang, Zelai Xu, Feng Gao, Shilong Ji, Wenhao Tang,
-Wenbo Ding, Chao Yu†
-, Yu Wang†
+Wenbo Ding, Chao Yu+, Yu Wang+
 
+[Overview](#overview) | [Installation](#installation) | [Usage](#usage) | [Citation](#citation) | [Acknowledgement](#acknowledgement)
 
 ## Overview
 
@@ -168,9 +168,7 @@ python train.py headless=true \
     task.ball_radius=0.1 \
     eval_interval=100 \
     save_interval=100 \
-    only_eval=false \
-    task.add_reward_hover=false \
-    task.done_ball_hit_ground=true \
+    only_eval=false
 ```
 
 For experiment tracking, we use [`wandb`](https://wandb.ai/). You need to have a wandb account, and set the `wandb` configurations in the `train.yaml` file. For example:
@@ -197,13 +195,6 @@ We provide training scripts for all tasks presented in our paper, including: (i)
 bash serve.sh
 ```
 
-
-## Ackowledgement
-
-This repository is heavily based on [OmniDrones](https://github.com/btx0424/OmniDrones).
-
-Some of the abstractions and implementation was heavily inspired by [Isaac Orbit](https://github.com/NVIDIA-Omniverse/Orbit).
-
 ## Citation
 
 Please cite our paper if you find our paper useful:
@@ -219,3 +210,9 @@ Please cite our paper if you find our paper useful:
       url={https://arxiv.org/abs/2505.04317}, 
 }
 ```
+
+## Acknowledgement
+
+This repository is heavily based on [OmniDrones](https://github.com/btx0424/OmniDrones).
+
+Some of the abstractions and implementation was heavily inspired by [Isaac Orbit](https://github.com/NVIDIA-Omniverse/Orbit).
