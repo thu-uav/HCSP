@@ -8,8 +8,8 @@ CUDA_VISIBLE_DEVICES=0 python ../train_attack.py headless=true \
     eval_interval=300 \
     save_interval=300 \
     only_eval=false \
-    SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass_2.pt" \
-    SecPass_hover_policy_checkpoint_path="checkpoint/checkpoint_secpass_hover_2.pt" \
+    SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass.pt" \
+    SecPass_hover_policy_checkpoint_path="checkpoint/checkpoint_secpass_hover.pt" \
     Att_goto_policy_checkpoint_path="checkpoint/checkpoint_goto.pt" \
     task.done_ball_hit_ground=true \
     task.done_Att_pass_the_net=true \

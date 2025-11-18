@@ -8,5 +8,5 @@ CUDA_VISIBLE_DEVICES=0 python ../train_set_hover.py headless=true \
     eval_interval=100 \
     save_interval=100 \
     only_eval=false \
-    SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass_2.pt" \
+    SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass.pt" \
     # wandb.mode=disabled \

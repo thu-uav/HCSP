@@ -8,11 +8,11 @@ CUDA_VISIBLE_DEVICES=0 python ../train_pass.py headless=true \
     eval_interval=100 \
     save_interval=100 \
     only_eval=false \
-    Opp_SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass_2.pt" \
-    Opp_SecPass_hover_policy_checkpoint_path="checkpoint/checkpoint_secpass_hover_2.pt" \
+    Opp_SecPass_policy_checkpoint_path="checkpoint/checkpoint_secpass.pt" \
+    Opp_SecPass_hover_policy_checkpoint_path="checkpoint/checkpoint_secpass_hover.pt" \
     Opp_Att_goto_policy_checkpoint_path="checkpoint/checkpoint_goto.pt" \
-    Opp_Att_policy_checkpoint_path="checkpoint/checkpoint_att_2.pt" \
-    Opp_Att_hover_policy_checkpoint_path="checkpoint/checkpoint_att_hover_2.pt" \
+    Opp_Att_policy_checkpoint_path="checkpoint/checkpoint_att.pt" \
+    Opp_Att_hover_policy_checkpoint_path="checkpoint/checkpoint_att_hover.pt" \
     FirstPass_goto_policy_checkpoint_path="checkpoint/checkpoint_goto.pt" \
     task.done_ball_hit_the_ground=true \
     task.done_FirstPass_hit_the_ground=true \
@@ -22,7 +22,7 @@ CUDA_VISIBLE_DEVICES=0 python ../train_pass.py headless=true \
     task.sim.dt=0.02 \
     task.sim.substeps=1 \
     task.use_trained_state=true \
-    FirstPass_policy_checkpoint_path="checkpoint/checkpoint_firstpass_3.pt" \
+    FirstPass_policy_checkpoint_path="checkpoint/checkpoint_firstpass.pt" \
     # wandb.mode=disabled \
     
     
