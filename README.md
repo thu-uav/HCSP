@@ -200,14 +200,20 @@ bash serve.sh
 Please cite our paper if you find our paper useful:
 
 ```bibtex
-@misc{zhang2025masteringmultidronevolleyballhierarchical,
-      title={Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning}, 
-      author={Ruize Zhang and Sirui Xiang and Zelai Xu and Feng Gao and Shilong Ji and Wenhao Tang and Wenbo Ding and Chao Yu and Yu Wang},
-      year={2025},
-      eprint={2505.04317},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2505.04317}, 
+@InProceedings{pmlr-v305-zhang25n,
+  title = 	 {Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning},
+  author =       {Zhang, Ruize and Xiang, Sirui and Xu, Zelai and Gao, Feng and Ji, Shilong and Tang, Wenhao and Ding, Wenbo and Yu, Chao and Wang, Yu},
+  booktitle = 	 {Proceedings of The 9th Conference on Robot Learning},
+  pages = 	 {5278--5300},
+  year = 	 {2025},
+  editor = 	 {Lim, Joseph and Song, Shuran and Park, Hae-Won},
+  volume = 	 {305},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {27--30 Sep},
+  publisher =    {PMLR},
+  pdf = 	 {https://raw.githubusercontent.com/mlresearch/v305/main/assets/zhang25n/zhang25n.pdf},
+  url = 	 {https://proceedings.mlr.press/v305/zhang25n.html},
+  abstract = 	 {In this paper, we tackle the problem of learning to play 3v3 multi-drone volleyball, a new embodied competitive task that requires both high-level strategic coordination and low-level agile control. The task is turn-based, multi-agent, and physically grounded, posing significant challenges due to its long-horizon dependencies, tight inter-agent coupling, and the underactuated dynamics of quadrotors. To address this, we propose Hierarchical Co-Self-Play (HCSP), a hierarchical reinforcement learning framework that separates centralized high-level strategic decision-making from decentralized low-level motion control. We design a three-stage population-based training pipeline to enable both strategy and skill to emerge from scratch without expert demonstrations: (I) training diverse low-level skills, (II) learning high-level strategy via self-play with fixed low-level controllers, and (III) joint fine-tuning through co-self-play. Experiments show that HCSP achieves superior performance, outperforming non-hierarchical self-play and rule-based hierarchical baselines with an average 82.9% win rate and a 71.5% win rate against the two-stage variant. Moreover, co-self-play leads to emergent team behaviors such as role switching and coordinated formations, demonstrating the effectiveness of our hierarchical design and training scheme.}
 }
 ```
 
