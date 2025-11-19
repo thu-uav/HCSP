@@ -200,14 +200,19 @@ bash serve.sh
 Please cite our paper if you find our paper useful:
 
 ```bibtex
-@misc{zhang2025masteringmultidronevolleyballhierarchical,
-      title={Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning}, 
-      author={Ruize Zhang and Sirui Xiang and Zelai Xu and Feng Gao and Shilong Ji and Wenhao Tang and Wenbo Ding and Chao Yu and Yu Wang},
-      year={2025},
-      eprint={2505.04317},
-      archivePrefix={arXiv},
-      primaryClass={cs.AI},
-      url={https://arxiv.org/abs/2505.04317}, 
+@InProceedings{pmlr-v305-zhang25n,
+  title={Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning},
+  author={Zhang, Ruize and Xiang, Sirui and Xu, Zelai and Gao, Feng and Ji, Shilong and Tang, Wenhao and Ding, Wenbo and Yu, Chao and Wang, Yu},
+  booktitle={Proceedings of The 9th Conference on Robot Learning},
+  pages={5278--5300},
+  year={2025},
+  editor={Lim, Joseph and Song, Shuran and Park, Hae-Won},
+  volume={305},
+  series={Proceedings of Machine Learning Research},
+  month={27--30 Sep},
+  publisher={PMLR},
+  pdf={https://raw.githubusercontent.com/mlresearch/v305/main/assets/zhang25n/zhang25n.pdf},
+  url={https://proceedings.mlr.press/v305/zhang25n.html}
 }
 ```
 
