@@ -10,12 +10,12 @@ from torch import vmap
 from omegaconf import OmegaConf, DictConfig
 
 from omni.isaac.kit import SimulationApp
-from omni_drones import CONFIG_PATH, init_simulation_app
-from omni_drones.utils.torchrl import SyncDataCollector, AgentSpec
-from omni_drones.utils.wandb import init_wandb
-from omni_drones.utils.psro.meta_solver import get_meta_solver
-from omni_drones.utils.psro.convergence import ConvergedIndicator
-from omni_drones.learning import PSROPolicy_coselfplay_phase_one, PSROPolicy
+from hcsp import CONFIG_PATH, init_simulation_app
+from hcsp.utils.torchrl import SyncDataCollector, AgentSpec
+from hcsp.utils.wandb import init_wandb
+from hcsp.utils.psro.meta_solver import get_meta_solver
+from hcsp.utils.psro.convergence import ConvergedIndicator
+from hcsp.learning import PSROPolicy_coselfplay_phase_one, PSROPolicy
 
 from setproctitle import setproctitle
 from torchrl.envs.transforms import (
@@ -486,7 +486,7 @@ def get_transforms(
     base_env,
     logger_func: Callable[[Dict], None] = None
 ):
-    from omni_drones.utils.torchrl.transforms import (
+    from hcsp.utils.torchrl.transforms import (
         LogOnEpisode,
     )
 
@@ -509,8 +509,8 @@ def get_transforms(
     if action_transform is None:
         pass
     elif action_transform == "rate":
-        from omni_drones.controllers import RateController as _RateController
-        from omni_drones.utils.torchrl.transforms import RateController
+        from hcsp.controllers import RateController as _RateController
+        from hcsp.utils.torchrl.transforms import RateController
 
         controller = _RateController(
             9.81, base_env.drone.params).to(base_env.device)
@@ -854,7 +854,7 @@ def main(cfg: DictConfig):
 
     setproctitle(run.name)
 
-    from omni_drones.envs.isaac_env import IsaacEnv
+    from hcsp.envs.isaac_env import IsaacEnv
 
     env_class = IsaacEnv.REGISTRY[cfg.task.name]
     base_env = env_class(cfg, headless=cfg.headless)

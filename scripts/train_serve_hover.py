@@ -11,17 +11,17 @@ import wandb
 from torch import vmap
 from omegaconf import OmegaConf, DictConfig
 
-from omni_drones import CONFIG_PATH, init_simulation_app
-from omni_drones.utils.torchrl import SyncDataCollector, AgentSpec
-from omni_drones.utils.torchrl.transforms import (
+from hcsp import CONFIG_PATH, init_simulation_app
+from hcsp.utils.torchrl import SyncDataCollector, AgentSpec
+from hcsp.utils.torchrl.transforms import (
     LogOnEpisode,
     FromMultiDiscreteAction,
     FromDiscreteAction,
     ravel_composite,
     History,
 )
-from omni_drones.utils.wandb import init_wandb
-from omni_drones.learning import (
+from hcsp.utils.wandb import init_wandb
+from hcsp.learning import (
     MAPPOPolicy_Serve_hover,
 )
 
@@ -57,7 +57,7 @@ class Every:
         self.i += 1
 
 
-from omni_drones.utils.stats import PROCESS_FUNC
+from hcsp.utils.stats import PROCESS_FUNC
 
 
 # change config_name
@@ -83,7 +83,7 @@ def main(cfg: DictConfig):
 
     setproctitle(run.name)
 
-    from omni_drones.envs.isaac_env import IsaacEnv
+    from hcsp.envs.isaac_env import IsaacEnv
 
     algos = {
         "mappo_serve_hover": MAPPOPolicy_Serve_hover,

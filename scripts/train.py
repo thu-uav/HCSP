@@ -11,17 +11,17 @@ import wandb
 from torch import vmap
 from omegaconf import OmegaConf, DictConfig
 
-from omni_drones import CONFIG_PATH, init_simulation_app
-from omni_drones.utils.torchrl import SyncDataCollector, AgentSpec
-from omni_drones.utils.torchrl.transforms import (
+from hcsp import CONFIG_PATH, init_simulation_app
+from hcsp.utils.torchrl import SyncDataCollector, AgentSpec
+from hcsp.utils.torchrl.transforms import (
     LogOnEpisode,
     FromMultiDiscreteAction,
     FromDiscreteAction,
     ravel_composite,
     History,
 )
-from omni_drones.utils.wandb import init_wandb
-from omni_drones.learning import (
+from hcsp.utils.wandb import init_wandb
+from hcsp.learning import (
     MAPPOPolicy,
 )
 
@@ -97,7 +97,7 @@ class debug_policy(nn.Module):
         return tensordict
 
 
-from omni_drones.utils.stats import PROCESS_FUNC
+from hcsp.utils.stats import PROCESS_FUNC
 
 
 @hydra.main(version_base=None, config_path=CONFIG_PATH, config_name="train")
@@ -117,7 +117,7 @@ def main(cfg: DictConfig):
 
     setproctitle(run.name)
 
-    from omni_drones.envs.isaac_env import IsaacEnv
+    from hcsp.envs.isaac_env import IsaacEnv
 
     algos = {
         "mappo": MAPPOPolicy,
@@ -163,14 +163,14 @@ def main(cfg: DictConfig):
     action_transform: str = cfg.task.get("action_transform", None)
     if action_transform is not None:
         if action_transform == "rate":
-            from omni_drones.controllers import RateController as _RateController
-            from omni_drones.utils.torchrl.transforms import RateController
+            from hcsp.controllers import RateController as _RateController
+            from hcsp.utils.torchrl.transforms import RateController
             controller = _RateController(9.81, base_env.drone.params).to(base_env.device)
             transform = RateController(controller)
             transforms.append(transform)
         elif action_transform == "PIDrate": # CTBR
-            from omni_drones.controllers import PIDRateController as _PIDRateController
-            from omni_drones.utils.torchrl.transforms import PIDRateController
+            from hcsp.controllers import PIDRateController as _PIDRateController
+            from hcsp.utils.torchrl.transforms import PIDRateController
             controller = _PIDRateController(cfg.sim.dt, 9.81, base_env.drone.params).to(base_env.device)
             transform = PIDRateController(controller)
             transforms.append(transform)
