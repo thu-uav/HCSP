@@ -1,19 +1,19 @@
 # Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning
 
-[![IsaacSim](https://img.shields.io/badge/Isaac%20Sim-2023.1.0.hotfix.1-orange.svg)](https://docs.omniverse.nvidia.com/app_isaacsim/app_isaacsim/overview.html)
-[![Python](https://img.shields.io/badge/python-3.10-blue.svg)](https://docs.python.org/3/whatsnew/3.10.html)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-This repository is the official implementation of the paper "Mastering Multi-Drone Volleyball through Hierarchical Co-Self-Play Reinforcement Learning".
-
-<p align="center">
-[ <a href="https://arxiv.org/pdf/2505.04317"><b>Paper</b></a> ] [ <a href="https://sites.google.com/view/hi-co-self-play"><b>Project Website</b></a> ]
-</p>
+<div align="center">
 
 Ruize Zhang, Sirui Xiang, Zelai Xu, Feng Gao, Shilong Ji, Wenhao Tang,
 Wenbo Ding, Chao Yu+, Yu Wang+
 
+[![paper](https://img.shields.io/badge/paper-A42C25?style=for-the-badge&logo=arxiv&logoColor=white)](https://arxiv.org/pdf/2505.04317)
+&nbsp;
+[![Code](https://img.shields.io/badge/Code-000000?style=for-the-badge&logo=github&logoColor=000&logoColor=white)](https://github.com/thu-uav/HCSP)
+&nbsp;
+[![Website](https://img.shields.io/badge/Website-1A73E8?style=for-the-badge&logo=googledocs&logoColor=white)](https://sites.google.com/view/hi-co-self-play)
+
 [Overview](#overview) | [Installation](#installation) | [Usage](#usage) | [Citation](#citation) | [Acknowledgement](#acknowledgement)
+
+</div>
 
 ## Overview
 
