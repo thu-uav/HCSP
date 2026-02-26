@@ -9,7 +9,7 @@ Wenbo Ding, Chao Yu+, Yu Wang+
 &nbsp;
 [![Code](https://img.shields.io/badge/Code-000000?style=for-the-badge&logo=github&logoColor=000&logoColor=white)](https://github.com/thu-uav/HCSP)
 &nbsp;
-[![Website](https://img.shields.io/badge/Website-1A73E8?style=for-the-badge&logo=googledocs&logoColor=white)](https://sites.google.com/view/hi-co-self-play)
+[![Website](https://img.shields.io/badge/Website-1A73E8?style=for-the-badge&logo=googledocs&logoColor=white)](https://hi-co-self-play.github.io)
 
 [Overview](#overview) | [Installation](#installation) | [Usage](#usage) | [Citation](#citation) | [Acknowledgement](#acknowledgement)
 
